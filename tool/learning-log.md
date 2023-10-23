@@ -4,16 +4,11 @@ Tool: **Jquery**
 
 Project: **Scramble Game**
 
----
-
 10/23/2023:
-My official Tool for this Freedom Project would be "Jquery" and I want to make a scramble game with the tool so my first step would be thinking of the process and what I want the scramble to look like.
-1. I would need a word bank where it gives the word and also the answer to the word
-2. I would start off with a simple function where it gives me the timer
-3. Make a function where it auto shuffles the words
-4. A function where the words are corected and checked and displayed as an error whenever the player types in a wrong character
-5. A refresh button and refreshes a word when
-6. A check word button where it checks the word when you click on it (then goes to the checking words function)
+I checked out Jquery's offical [website](https://jquery.com/) and I was trying to find some codes that would be helpful in my scramble game and the first thing I noticed was I have to include a Jquery CDN and I learned that there are 2 ways to do it, you can first download Jquery and then just imbed it onto your IDE like `<script src="jquery-3.7.1.min.js"></script>` or you can use the CDN from Jquery that involves the code `<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>`. Any of these 2 can be used to start your code off and you can add it onto the header parts of your project. <br>
+The second part would checking out the different ways you can grab elements with ID with Jquery because I need that in order to use buttons and 
+
+10/24/2023:
 
 ```html
 <body>
@@ -33,12 +28,6 @@ My official Tool for this Freedom Project would be "Jquery" and I want to make a
         </div>
     </div>
 ```
-The above is the html basic set up that I need for the Scramble Game and then I can use the ID(s) for each element and grab it with Jquery to start making the code
-**I'll worry about the css last because it would take the longest to do and utalize** 
-
-X/X/X:
-* Text
-
 
 <!--
 * Links you used today (websites, videos, etc)
