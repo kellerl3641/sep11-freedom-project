@@ -143,3 +143,4 @@ const checkWord = () => {
 
 refreshBtn.addEventListener("click", initGame);
 checkBtn.addEventListener("click", checkWord);
+
