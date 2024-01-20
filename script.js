@@ -94,7 +94,6 @@ let words = [
     },
 ]
 
-
 const wordText = document.querySelector(".word"),
 hintText = document.querySelector(".hint "),
 timeText = document.querySelector(".time "),
@@ -137,8 +136,8 @@ initGame();
 const checkWord = () => {
     let userWord = inputField.value.toLowerCase();
     if(!userWord) return alert("Please enter the word to check!");
-    if(userWord !== correctWord) return alert(`Oops! ${userWord} is not a correct word`);
-    alert(`Congrats! ${correctWord.toUpperCase()} is the correct word`);
+    if(userWord !== correctWord) return alert(`Try again nerd ${userWord} is not a correct word`);
+    alert(`Cool! ${correctWord.toUpperCase()} is the correct word`);
     initGame();
 }
 
