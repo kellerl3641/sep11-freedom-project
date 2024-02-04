@@ -9,7 +9,6 @@ I checked out Jquery's offical [website](https://jquery.com/) and I was trying t
 The second part would checking out the different ways you can grab elements with ID with Jquery because I need that in order to use buttons and
 
 10/24/2023:
-
 ```html
 <body>
     <div class="container">
@@ -30,6 +29,47 @@ The second part would checking out the different ways you can grab elements with
 ```
 11/18/2023
 I began to start creating the first section of my code for Scramble game and I came up with
+
+```javascript
+let words = [
+    {
+        word: "", //object
+        hint: "" //object
+    },
+    {
+        word: "",
+        hint: ""
+    }
+]
+```
+
+The code above is basically used to store all my "questions" that I will be asking the players and the word is going to pop up randomly at any chosen moment and it would display the hint of the string that is stored in there. The player would then try to guess the word while relying on my hint and if they were to get the word correctly, they would get an alert saying "Good job, onto the next word" or if they were to get the word wrong, they would see an alert saying "That's not the correct word. Please try again."
+
+
+12/3/2023<br>
+Since I would be using a lot of user inputted boxes, I would then need to familarize myself for it. From tinkering with my tool I learned that when you want to display any user inputted values, you can use the code `val()` which allows you to get the user's input value into whatever stored variable you want. For example, I was tinkering with this section below :
+```javascript
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+$(document).ready(function(){
+    // Get value on button click and show alert
+    $("#Btn").click(function(){
+        var str = $("#myInput").val();
+        alert(str);
+    });
+});
+</script>
+```
+The code above allows the user's input to be snatched using `.val()` which I later stored in a variable with the id "Btn" and when the user clicks on that button, it returns the exact same value that they had inputed in the input box.
+<br>
+This part below is the HTML parts section for the Jquery above ^
+```html
+ <input type="text" id="myInput">
+    <button type="button" id="Btn">Show Value</button>
+```
+1/12/2024<br>
+I decided to update my "words" array that stores all my words and all the words that the user needs to guess for the game and I got
+
 ```javascript
 let words = [
     {
@@ -127,31 +167,33 @@ let words = [
     },
 ]
 ```
-The code above is basically used to store all my "questions" that I will be asking the players and the word is going to pop up randomly at any chosen moment and it would display the hint of the string that is stored in there. The player would then try to guess the word while relying on my hint and if they were to get the word correctly, they would get an alert saying "Good job, onto the next word" or if they were to get the word wrong, they would see an alert saying "That's not the correct word. Please try again."
 
-12/3/2023
-Since I would be using a lot of user inputted boxes, I would then need to familarize myself for it. From tinkering with my tool I learned that when you want to display any user inputted values, you can use the code `val()` which allows you to get the user's input value into whatever stored variable you want. For example, I was tinkering with this section below :
+1/29/2024<br>
+I worked on getting some buttons to start with and I hopped over to Jquery's main page and noticed that there are many ways for me to add a button using Jquery especially since they have this new library called "Jquery UI" (mainly used for buttons, displays and decorations) but it's quite different from just the regular HTML + CSS. I took a snippet of the Jquery UI button :
 ```javascript
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script>
-$(document).ready(function(){
-    // Get value on button click and show alert
-    $("#Btn").click(function(){
-        var str = $("#myInput").val();
-        alert(str);
-    });
-});
-</script>
+$( function() {
+    $( ".widget input[type=submit], .widget a, .widget button" ).button();
+    $( "button, input, a" ).on( "click", function( event ) {
+      event.preventDefault();
+    } );
+  } );
 ```
-The code above allows the user's input to be snatched using `.val()` which I later stored in a variable with the id "Btn" and when the user clicks on that button, it returns the exact same value that they had inputed in the input box.
-<hr>
-<br>
-This part below is the HTML parts section for the Jquery above ^
-```html
- <input type="text" id="myInput">
-    <button type="button" id="Btn">Show Value</button>
-```
+at first I didn't understand anything that this code was trying to say but I started to break it down line by line and I think the first part where it says "input[type=submit]" is basically grabbing the html part because I remember that there is this part in HTML where you choose the type of input you want like ```"<input type="text">``` but instead it's just grabbing for the input type = submit button and then the rest is to activate the "button" ability in Jquery UI and then the rest is just the same as any.
 
+2/1/2024<br>
+I decided to try and create some variables that can be used to store any of these buttons and use them for later and I came up with
+```javascript
+const wordText = document.querySelector(".word"),
+hintText = document.querySelector(".hint "),
+timeText = document.querySelector(".time "),
+inputField = document.querySelector("input"),
+refreshBtn = document.querySelector(".refresh-word"),
+checkBtn = document.querySelector(".check-word");
+
+
+let correctWord, timer;
+```
+The code is simply just grabbing the class of the element that I want to use. and then storing them in a const so I don't later mess up and try to rename the variable.
 <!--
 * Links you used today (websites, videos, etc)
 * Things you tried, progress you made, etc
