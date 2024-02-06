@@ -12,19 +12,41 @@
    align-items: center;
    justify-content: center;
    min-height: 100vh;
-   background: #5372F0;
+   background-image: url(https://www.boardgamehalv.com/wp-content/uploads/2020/09/BestUnscrambleGameApps_ScrabbleLetters.jpg);
  }
+
  .container{
-   width: 440px;
+   width: 340px;
    border-radius: 7px;
-   background: #fff;
+   /* background: #FFB6C1; //pink */
    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+   color: #FFB6C1;
+   border: 5px dotted;
+   background-image: url(https://render.fineartamerica.com/images/images-profile-flow/400/images/artworkimages/mediumlarge/2/peppa-pig-smithkay.jpg)
  }
+ p.word{
+  border: 1px solid;
+  background: #FFB6C1;
+  color: #AA336A;
+  font-size: 100px;
+ }
+  p.hint{
+    border: 1px dotted;
+    background: #FFB6C1;
+    color: #AA336A;
+    padding: 3px;
+    text-align: center;
+  }
+  p.time{
+    width: 130px;
+    color: #AA336A;
+  }
  .container h2{
    font-size: 25px;
-   font-weight: 500;
+   font-weight: 400;
    padding: 16px 25px;
    border-bottom: 1px solid #ccc;
+   color: pink;
  }
  .container .content{
    margin: 25px 20px 35px;
@@ -45,6 +67,7 @@
  .details p{
    font-size: 18px;
    margin-bottom: 10px;
+   border: 2px dashed;
  }
  .details p b{
    font-weight: 500;
@@ -57,6 +80,7 @@
    font-size: 18px;
    border-radius: 5px;
    border: 1px solid #bfbfbf;
+
  }
  .content input:focus{
    box-shadow: 0px 2px 4px rgba(0,0,0,0.08);
@@ -75,7 +99,7 @@
  .buttons button{
    border: none;
    outline: none;
-   color: #fff;
+   color: #000;
    cursor: pointer;
    padding: 15px 0;
    font-size: 17px;
@@ -87,16 +111,16 @@
    transform: scale(0.97);
  }
  .buttons .refresh-word{
-   background: #6C757D;
+   background: #CCCCFF;
  }
  .buttons .refresh-word:hover{
-   background: #5f666d;
+   background: #00A36C;
  }
  .buttons .check-word{
-   background: #5372F0;
+   background: #CCCCFF;
  }
  .buttons .check-word:hover{
-   background: #2c52ed;
+   background: #0047AB;
  }
 
  @media screen and (max-width: 470px) {
@@ -125,4 +149,8 @@
      font-size: 16px;
      width: calc(100% / 2 - 7px);
    }
+ }
+
+ h2{
+  border-style: 5px;
  }
