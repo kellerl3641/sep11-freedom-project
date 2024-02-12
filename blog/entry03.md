@@ -20,13 +20,23 @@ const startTimer = maximumTime => {
     }, 1000);
 }
 ```
-The main part of this code would be the line where it states the MaximumTime and the correct intervals for it.
 
+
+The main part of this code would be the line where it states the MaximumTime and the correct intervals for it.
 ### Engineering Design Process
+The Engineering Design Process that I'm currently on would be 6 and 7 which are "Test and evaluate the prototype" and "Improve as needed". I was trying to work the clear interval segment of the code and in return it gave me a gigantic error in my code and it returned no maximumTime.
 ### Skills
+Some skills that I use was "Modifying HTML Content" which includes Skill in changing the content of HTML elements, including text, attributes, and HTML structure, using properties like innerHTML.
 ### Goals (over the break)
 I plan to actually create my game starter function because that's what is the main starting point of my game and I plan to check more of other people's creations to get an idea of how the code is gonna run but overall!!! I'M GOING TO GET SOME CODING DONE MR.MUELLER I PROMISE!!!
+
 
 [Previous](entry02.md) | [Next](entry04.md)
 
 [Home](../README.md)
+
+
+/*
+look I’m not about to sound like a little kid and beg for anything. And as cringe as it sounds talking with you for the past couple days has been the best week I’ve had in a while. Been going through some shit before you sent that first text last week. All ik is that I love you for that and that ain’t gonna change*/
+
+
