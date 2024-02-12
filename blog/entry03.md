@@ -36,7 +36,5 @@ I plan to actually create my game starter function because that's what is the ma
 [Home](../README.md)
 
 
-/*
-look I’m not about to sound like a little kid and beg for anything. And as cringe as it sounds talking with you for the past couple days has been the best week I’ve had in a while. Been going through some shit before you sent that first text last week. All ik is that I love you for that and that ain’t gonna change*/
 
 
