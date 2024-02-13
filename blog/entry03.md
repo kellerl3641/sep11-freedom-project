@@ -24,9 +24,9 @@ const startTimer = maximumTime => {
 
 The main part of this code would be the line where it states the MaximumTime and the correct intervals for it.
 ### Engineering Design Process
-The Engineering Design Process that I'm currently on would be 6 and 7 which are "Test and evaluate the prototype" and "Improve as needed". I was trying to work the clear interval segment of the code and in return it gave me a gigantic error in my code and it returned no maximumTime.
+The Engineering Design Process that I'm currently on would be 6 and 7 which are "Test and evaluate the prototype" and "Improve as needed" because I still didn't complete my actual game-starting function and that is the heart of my project but I definitely got my timer to work so I was really proud of that.
 ### Skills
-Some skills that I use was "Modifying HTML Content" which includes Skill in changing the content of HTML elements, including text, attributes, and HTML structure, using properties like innerHTML.
+Some skills that I use was "breaking code down into smaller pieces" which includes Skill in changing the content of HTML elements, including text, attributes, and HTML structure, using properties like innerHTML. I was trying to work the clear interval segment of the code and in return it gave me a gigantic error in my code and it returned no maximumTime. I forgot to set an argument in the parameters and it kept returning "there was no maximumTime" and I was confused on why it kept returning that error and I was frustrated because I could not figure it out. Therefore, I went back to my code and break down the code into different segments where I don't have to fuss over all the big chunks and it resulted in completion of my code. I also used "How to Google" because I was searching up "if there must be an argument called in a parameter if you want to use a not indicated argument." The results were very conflicting because it didn't state if there must be a "given" argument in order to use another one but then I realized that I was trying to use an argument in a function when there isn't that argument stated. Which was why the console was screaming errors at me. Therefore, I made an argument in the function that I needed and I decided to retry the console and FINALLY it stopped screaming at me.
 ### Goals (over the break)
 I plan to actually create my game starter function because that's what is the main starting point of my game and I plan to check more of other people's creations to get an idea of how the code is gonna run but overall!!! I'M GOING TO GET SOME CODING DONE MR.MUELLER I PROMISE!!!
 
@@ -34,7 +34,4 @@ I plan to actually create my game starter function because that's what is the ma
 [Previous](entry02.md) | [Next](entry04.md)
 
 [Home](../README.md)
-
-
-
 
