@@ -199,7 +199,29 @@ The code is simply just grabbing the class of the element that I want to use. an
 Today I didn't really do much in my project but I researched completely about the usage of `document.addEventListener('DOMContentLoaded', function())` and it turns out that because sometimes Javascript loads first and then the HTML and that results in the system not understanding why there is a Javascript code trying to grab a HTML element when there isn't one.
 
 2/12/2024 <br>
-Today I tried out the different Javscript querySelectors that grabs the element's id and it's
+Today I tried out the different Javscript querySelectors that grabs the element's id and its classes using `document.querySelector()` and `document.getElementById()`. The querySelector one is more of a upgrade from `document.getElementById()` because it doesn't need to just write "get by class" or "get by ID". You can directly get it with the tag, id or class of an element. Something I tinkered with is below :
+
+```html
+<p class="example">I am a paragraph.</p>
+<p>This is a p element.</p>
+```
+The Javascript for grabbing the elements are shown below :
+```javascript
+document.querySelector("p").style.backgroundColor = "pink"; //sets it to background color of pink
+document.querySelector(".example").style.backgroundColor = "red";
+```
+The two codes above do the exact same thing but one changes the background color ot red and the other to pink.
+
+2/19/2024 <br>
+Mr.Mueller was talking about the difference between `QuerySelectorAll()` and `querySelector()` and the main 2 differences between the two of them is firstly, the `QuerySelectorAll()` grabs all the element with the same tag or the same id, class. The `querySelector()` only selects the first element with the same tag or id, class instead of every single one. Secondly, the `QuerySelectorAll()` can be used to save time and effectively reduce having to make loopsp for a single element. Some code that I tinkered with in JSBIN are shown below :
+
+```html
+
+```
+
+```javascript
+
+```
 <!--
 * Links you used today (websites, videos, etc)
 * Things you tried, progress you made, etc
