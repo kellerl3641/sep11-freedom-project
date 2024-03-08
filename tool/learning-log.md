@@ -194,6 +194,12 @@ checkBtn = document.querySelector(".check-word");
 let correctWord, timer;
 ```
 The code is simply just grabbing the class of the element that I want to use. and then storing them in a const so I don't later mess up and try to rename the variable.
+
+2/5/2024 <br>
+Today I didn't really do much in my project but I researched completely about the usage of `document.addEventListener('DOMContentLoaded', function())` and it turns out that because sometimes Javascript loads first and then the HTML and that results in the system not understanding why there is a Javascript code trying to grab a HTML element when there isn't one.
+
+2/12/2024 <br>
+Today I tried out the different Javscript querySelectors that grabs the element's id and it's
 <!--
 * Links you used today (websites, videos, etc)
 * Things you tried, progress you made, etc
