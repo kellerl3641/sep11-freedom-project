@@ -216,12 +216,34 @@ The two codes above do the exact same thing but one changes the background color
 Mr.Mueller was talking about the difference between `QuerySelectorAll()` and `querySelector()` and the main 2 differences between the two of them is firstly, the `QuerySelectorAll()` grabs all the element with the same tag or the same id, class. The `querySelector()` only selects the first element with the same tag or id, class instead of every single one. Secondly, the `QuerySelectorAll()` can be used to save time and effectively reduce having to make loopsp for a single element. Some code that I tinkered with in JSBIN are shown below :
 
 ```html
-
+<h2 class="fruits">An apple</h2>
+<p class="fruits">A pear.</p>
 ```
 
 ```javascript
-
+let allVar = document.querySelectorAll(".fruits");
+for (let i = 0; i < allVar.length; i++) {
+  allVar[i].style.backgroundColor = "pink";
+}
 ```
+The code above grabs all the element with the class name of fruits and then loops through each one of them to make the background color of each, pink.
+
+2/26/2024 <br>
+I was tinkering with my buttons and I noticed that I wanted to make sure the user inputs were not all capitalized even if the user decides to enter the values in upper case and I searched on google how to make the values capitalized and I came across `.toLowerCase()` and some snippets of my codes is shown below:
+```javascript
+let userChoice = inputVal.value.toLowerCase();
+if(!userChoice) return alert("Please enter the word to check!");
+```
+This code allows me to store the user's input as a variable named "userChoice" and because I wanted to store the values as lower cases, I automatically used `.toLowerCase()`. It then sends an alert if the user doesn't have anything in that textbox.
+
+3/4/2024 <br>
+I didn't really feel like keeping track of my work and working more on my project today so I decided to fix up my code because it seemed very "sloppy" and hard to read and there was quotations inside quotations which made my eyes go fuzzy trying to read this line of code shown below :
+`"oops! " + userChoice + " is not a correct word."` so I decided to change it to this one:
+```javascript
+(`Oops! ${userChoice} is not a correct word`);
+alert(`Congrats! ${correctWord.toUpperCase()} is the correct word`);
+```
+these 2 codes look very differently than each other but I guarantee you that these 2 does the exact same thing. The first one is just using string concatentions and it's exactly what we learned back in Unit 1 of Javascript Basics (Look back to your notes) and the second part would just be using the new improved version of coding to enhance your first one.
 <!--
 * Links you used today (websites, videos, etc)
 * Things you tried, progress you made, etc
