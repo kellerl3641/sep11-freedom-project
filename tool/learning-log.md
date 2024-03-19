@@ -244,6 +244,29 @@ I didn't really feel like keeping track of my work and working more on my projec
 alert(`Congrats! ${correctWord.toUpperCase()} is the correct word`);
 ```
 these 2 codes look very differently than each other but I guarantee you that these 2 does the exact same thing. The first one is just using string concatentions and it's exactly what we learned back in Unit 1 of Javascript Basics (Look back to your notes) and the second part would just be using the new improved version of coding to enhance your first one.
+
+3/18/2024 <br>
+I was sick and cramping so I didn't really do much today at home but I was trying to understand how to generate different letters and words and I realized that I could simply utilize the "password" generator concept in my scramble game and just replicate and change a few ideas.
+```javascript
+  function generatePass() {
+      let pass = '';
+      let str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' +
+                'abcdefghijklmnopqrstuvwxyz0123456789@#$';
+
+      for (let i = 1; i <= 8; i++) {
+        let char = Math.floor(Math.random() * str.length);
+        pass += str.charAt(char);
+      }
+
+      document.getElementById("password").textContent = pass; // Display the generated password
+      return pass;
+    }
+
+    document.getElementById("but").addEventListener("click", generatePass);
+
+```
+
+The above is the password generator that I thought of but I added an EventListener to display the value when clicked.
 <!--
 * Links you used today (websites, videos, etc)
 * Things you tried, progress you made, etc
