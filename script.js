@@ -41,6 +41,14 @@ let words = [
         hint: "The muscular organ of mouth"
     },
     {
+        word: "expansion",
+        hint: "The process of increase or grow"
+    },
+    {
+        word: "country",
+        hint: "A politically identified region"
+    },
+    {
         word: "group",
         hint: "A number of objects or persons"
     },
@@ -111,6 +119,31 @@ document.addEventListener('DOMContentLoaded', function() {
                 startGame();
             }, 1000);
         }
+
+        const startGame = () => {
+            startTimer(30);
+            let randomObj = words[Math.floor(Math.random() * words.length)];
+            let wordArray = randomObj.word.split("");
+            for (let i = wordArray.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [wordArray[i], wordArray[j]] = [wordArray[j], wordArray[i]];
+            }
+            wordVal.innerText = wordArray.join("");
+            hintVal.innerText = randomObj.hint;
+            correctWord = randomObj.word.toLowerCase();;
+            inputVal.value = "";
+            inputVal.setAttribute("maxlength", correctWord.length);
+        }
+        startGame();
+
+        const checkWord = () => {
+            let userChoice = inputVal.value.toLowerCase();
+            if(!userChoice) return alert("Please enter the word to check!");
+            if(userChoice !== correctWord) return alert(`Oops! ${userChoice} is not a correct word`);
+            alert(`Congrats! ${correctWord.toUpperCase()} is the correct word`);
+            startGame();
+        }
+
         refreshBtn.addEventListener("click", startGame);
         checkBtn.addEventListener("click", checkWord);
 

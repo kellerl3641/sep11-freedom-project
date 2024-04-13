@@ -267,6 +267,146 @@ I was sick and cramping so I didn't really do much today at home but I was tryin
 ```
 
 The above is the password generator that I thought of but I added an EventListener to display the value when clicked.
+
+3/25/2024
+I checked over the Jquery UI and I wanted to try and incorporate a scoreboard onto my Scramble game but I don't exactly know where to start so I came up with a plan of what I could try to do...
+**steps**
+1 - create a empty span to later add text later on and even makek
+
+4/1/2024
+I think integrating the scoreboard added an extra layer of complexity but also enhanced the game's playability and competitiveness.
+I took this code snippet from my VS code shown below, it can be used as a starter code and changed to fit my actual code because writing it again is work....:
+```javascript
+function updateScoreboard() {
+  // Clear previous scores
+  scoresList.innerHTML = '';
+
+  // Add new score
+  const scoreItem = document.createElement('li');
+  scoreItem.textContent = `Score: ${score}`;
+  scoresList.appendChild(scoreItem);
+}
+```
+4/8/2024
+I didn't really know what to exactly experiment on with my freedom project so I decided to make a further plan about what I could try and add in my game to make it beyond MVP and here's what I came up with. <br>
+
+--  Enhance the game with additional features such as a timer, difficulty levels, or multiplayer support.
+-- Improve the user interface and visual design to make the game more engaging and intuitive.
+-- Explore frameworks and libraries such as React or Vue.js for building more complex and dynamic web applications.
+
+//Friday night I got bored so here I am tweaking on another tiny scramble game <:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiny Scramble Game</title>
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+<body>
+  <div id="scramble-game">
+    <h1>Scramble Game</h1>
+    <div id="word-display"></div>
+    <input type="text" id="guess-input" placeholder="Enter your guess">
+    <button id="guess-btn">Submit Guess</button>
+    <div id="message"></div>
+    <div id="scoreboard">
+      <h2>Scoreboard</h2>
+      <ul id="scores"></ul>
+    </div>
+  </div>
+  <!-- <script src="script.js"></script> -->
+</body>
+</html>
+```
+The javascript is below:
+```javascript
+// List of words for the game
+const words = ['javascript', 'programming', 'developer', 'web', 'code'];
+
+let currentWordIndex; // Index of the current word being guessed
+let scrambledWord; // Scrambled version of the current word
+let score = 0; // Player's score
+
+// Elements
+const wordDisplay = document.getElementById('word-display');
+const guessInput = document.getElementById('guess-input');
+const guessBtn = document.getElementById('guess-btn');
+const message = document.getElementById('message');
+const scoresList = document.getElementById('scores');
+
+// Event listener for guess button
+guessBtn.addEventListener('click', checkGuess);
+
+// Initialize the game
+initializeGame();
+
+function initializeGame() {
+  // Reset message
+  message.textContent = '';
+
+  // Choose a random word from the words array
+  currentWordIndex = Math.floor(Math.random() * words.length);
+  let word = words[currentWordIndex];
+
+  // Scramble the word
+  scrambledWord = scrambleWord(word);
+
+  // Display the scrambled word
+  wordDisplay.textContent = scrambledWord;
+}
+
+function scrambleWord(word) {
+  // Split the word into an array of characters
+  let characters = word.split('');
+
+  // Scramble the characters
+  for (let i = characters.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [characters[i], characters[j]] = [characters[j], characters[i]];
+  }
+
+  // Join the characters back into a string
+  return characters.join('');
+}
+
+function checkGuess() {
+  // Get the player's guess
+  const guess = guessInput.value.toLowerCase();
+
+  // Check if the guess is correct
+  if (guess === words[currentWordIndex]) {
+    // Increment score
+    score++;
+    updateScoreboard();
+
+    // Display success message
+    message.textContent = 'Correct guess!';
+
+    // Initialize a new word
+    initializeGame();
+  } else {
+    // Display error message
+    message.textContent = 'Incorrect guess. Try again.';
+  }
+
+  // Clear the guess input
+  guessInput.value = '';
+}
+
+function updateScoreboard() {
+  // Clear previous scores
+  scoresList.innerHTML = '';
+
+  // Add new score
+  const scoreItem = document.createElement('li');
+  scoreItem.textContent = `Score: ${score}`;
+  scoresList.appendChild(scoreItem);
+}
+```
+
+As you can see, the concept is the same but the actual code and name or variables are different. The scoreboard updates with the user as they try to play the game.
 <!--
 * Links you used today (websites, videos, etc)
 * Things you tried, progress you made, etc
