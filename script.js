@@ -42,7 +42,7 @@ let words = [
     },
     {
         word: "expansion",
-        hint: "The process of increase or grow"
+        hint: "To increase or grow"
     },
     {
         word: "country",
