@@ -1,4 +1,3 @@
-
 let words = [
     {
         word: "addition",
@@ -97,54 +96,62 @@ let words = [
 
 
 document.addEventListener('DOMContentLoaded', function() {
-        const wordVal = document.querySelector(".word"),
-        hintVal = document.querySelector(".hint"),
-        timeText = document.querySelector(".time"),
-        inputVal = document.querySelector("input"),
-        refreshBtn = document.querySelector(".refresh-word"),
-        checkBtn = document.querySelector(".check-word");
+    const wordVal = document.querySelector(".word"),
+          hintVal = document.querySelector(".hint span"),
+          timeText = document.querySelector(".time span"),
+          inputVal = document.querySelector("input"),
+          refreshBtn = document.querySelector(".refresh-word"),
+          checkBtn = document.querySelector(".check-word"),
+          scoreDisplay = document.querySelector(".score");
 
+    let correctWord, timer, score = 0;
 
-        let correctWord, timer;
-
-
-        const startTimer = maximumTime => {
-            clearInterval(timer);
-            timer = setInterval(() => {
-                if(maximumTime > 0) {
-                    maximumTime--;
-                    return timeText.innerText = maximumTime;
-                }
-                alert(`TIME ENDED! ${correctWord.toUpperCase()} was the correct word!!! LOSER`);
-                startGame();
-            }, 1000);
-        }
-
-        const startGame = () => {
-            startTimer(30);
-            let randomObj = words[Math.floor(Math.random() * words.length)];
-            let wordArray = randomObj.word.split("");
-            for (let i = wordArray.length - 1; i > 0; i--) {
-                let j = Math.floor(Math.random() * (i + 1));
-                [wordArray[i], wordArray[j]] = [wordArray[j], wordArray[i]];
+    const startTimer = maximumTime => {
+        clearInterval(timer);
+        timer = setInterval(() => {
+            if(maximumTime > 0) {
+                maximumTime--;
+                return timeText.innerText = maximumTime;
             }
-            wordVal.innerText = wordArray.join("");
-            hintVal.innerText = randomObj.hint;
-            correctWord = randomObj.word.toLowerCase();;
-            inputVal.value = "";
-            inputVal.setAttribute("maxlength", correctWord.length);
-        }
-        startGame();
-
-        const checkWord = () => {
-            let userChoice = inputVal.value.toLowerCase();
-            if(!userChoice) return alert("Please enter the word to check!");
-            if(userChoice !== correctWord) return alert(`Oops! ${userChoice} is not a correct word`);
-            alert(`Congrats! ${correctWord.toUpperCase()} is the correct word`);
+            alert(`TIME ENDED! ${correctWord.toUpperCase()} was the correct word!!!`);
             startGame();
+        }, 1000);
+    }
+
+    const startGame = () => {
+        startTimer(30);
+        let randomObj = words[Math.floor(Math.random() * words.length)];
+        let wordArray = randomObj.word.split("");
+        for (let i = wordArray.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            [wordArray[i], wordArray[j]] = [wordArray[j], wordArray[i]];
         }
+        wordVal.innerText = wordArray.join("");
+        hintVal.innerText = randomObj.hint;
+        correctWord = randomObj.word.toLowerCase();;
+        inputVal.value = "";
+        inputVal.setAttribute("maxlength", correctWord.length);
+    }
 
-        refreshBtn.addEventListener("click", startGame);
-        checkBtn.addEventListener("click", checkWord);
+    const checkWord = () => {
+        let userChoice = inputVal.value.toLowerCase();
+        if(!userChoice) return alert("Please enter the word to check!");
+        if(userChoice !== correctWord) return alert(`Oops! ${userChoice} is not the correct word`);
+        alert(`Congrats! ${correctWord.toUpperCase()} is the correct word`);
+        score *= 2; // Increase the score each time by multiplying it by 2
+        scoreDisplay.innerText = score;
+        startGame();
+    }
 
+    refreshBtn.addEventListener("click", startGame);
+    checkBtn.addEventListener("click", checkWord);
+
+    inputVal.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            checkWord();
+        }
+    });
+
+    startGame(); // Start the game when the page loads
+    scoreDisplay.innerText = score; // Initialize the score display
 });
