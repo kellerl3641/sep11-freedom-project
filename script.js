@@ -94,22 +94,21 @@ let words = [
     },
 ]
 
-
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const wordVal = document.querySelector(".word"),
-          hintVal = document.querySelector(".hint span"),
-          timeText = document.querySelector(".time span"),
-          inputVal = document.querySelector("input"),
-          refreshBtn = document.querySelector(".refresh-word"),
-          checkBtn = document.querySelector(".check-word"),
-          scoreDisplay = document.querySelector(".score");
+        hintVal = document.querySelector(".hint span"),
+        timeText = document.querySelector(".time span"),
+        inputVal = document.querySelector("input"),
+        refreshBtn = document.querySelector(".refresh-word"),
+        checkBtn = document.querySelector(".check-word"),
+        scoreDisplay = document.querySelector(".score");
 
     let correctWord, timer, score = 0;
 
     const startTimer = maximumTime => {
         clearInterval(timer);
         timer = setInterval(() => {
-            if(maximumTime > 0) {
+            if (maximumTime > 0) {
                 maximumTime--;
                 return timeText.innerText = maximumTime;
             }
@@ -128,25 +127,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         wordVal.innerText = wordArray.join("");
         hintVal.innerText = randomObj.hint;
-        correctWord = randomObj.word.toLowerCase();;
+        correctWord = randomObj.word.toLowerCase();
         inputVal.value = "";
         inputVal.setAttribute("maxlength", correctWord.length);
     }
 
     const checkWord = () => {
         let userChoice = inputVal.value.toLowerCase();
-        if(!userChoice) return alert("Please enter the word to check!");
-        if(userChoice !== correctWord) return alert(`Oops! ${userChoice} is not the correct word`);
+        if (!userChoice) return alert("Please enter the word to check!");
+        if (userChoice !== correctWord) return alert(`Oops! ${userChoice} is not the correct word`);
         alert(`Congrats! ${correctWord.toUpperCase()} is the correct word`);
-        score *= 2; // Increase the score each time by multiplying it by 2
-        scoreDisplay.innerText = score;
+        score++; // Increment the score by 1
+        scoreDisplay.innerText = score; // Update the score display
         startGame();
     }
 
     refreshBtn.addEventListener("click", startGame);
     checkBtn.addEventListener("click", checkWord);
 
-    inputVal.addEventListener("keypress", function(event) {
+    inputVal.addEventListener("keypress", function (event) {
         if (event.key === "Enter") {
             checkWord();
         }
@@ -155,3 +154,4 @@ document.addEventListener('DOMContentLoaded', function() {
     startGame(); // Start the game when the page loads
     scoreDisplay.innerText = score; // Initialize the score display
 });
+
