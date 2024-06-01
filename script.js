@@ -59,7 +59,6 @@ let words = [
         word: "store",
         hint: "Large shop where goods are traded"
     },
-
     {
         word: "field",
         hint: "Area of land for farming activities"
@@ -123,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let wordArray = randomObj.word.split("");
         for (let i = wordArray.length - 1; i > 0; i--) {
             let j = Math.floor(Math.random() * (i + 1));
-            [wordArray[i], wordArray[j]] = [wordArray[j], wordArray+[i]];
+            [wordArray[i], wordArray[j]] = [wordArray[j], wordArray[i]];
         }
         wordVal.innerText = wordArray.join("");
         hintVal.innerText = randomObj.hint;
@@ -154,4 +153,3 @@ document.addEventListener('DOMContentLoaded', function () {
     startGame(); // Start the game when the page loads
     scoreDisplay.innerText = score; // Initialize the score display
 });
-
