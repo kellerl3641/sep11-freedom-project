@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let wordArray = randomObj.word.split("");
         for (let i = wordArray.length - 1; i > 0; i--) {
             let j = Math.floor(Math.random() * (i + 1));
-            [wordArray[i], wordArray[j]] = [wordArray[j], wordArray[i]];
+            [wordArray[i], wordArray[j]] = [wordArray[j], wordArray+[i]];
         }
         wordVal.innerText = wordArray.join("");
         hintVal.innerText = randomObj.hint;
